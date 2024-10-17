@@ -1,0 +1,39 @@
+/* src/pages/Blogs.css */
+.container {
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .habit-form {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .habit-form input {
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+  
+  .habit-form button {
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .habit-form button:hover {
+    background-color: var(--secondary-color);
+  }
+  
+  .error {
+    color: red;
+  }
+  
+  .success {
+    color: green;
+  }
+  

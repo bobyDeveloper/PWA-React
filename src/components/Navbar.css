@@ -1,0 +1,29 @@
+/* Navbar.css */
+nav {
+    background-color: var(--primary-color);
+    padding: 1rem;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li {
+    font-size: 1.2rem;
+  }
+  
+  nav ul li a {
+    color: white;
+    text-transform: uppercase;
+  }
+  
