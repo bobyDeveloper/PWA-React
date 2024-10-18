@@ -8,6 +8,7 @@ const Contacto = () => {
     correo: '',
     mensaje: ''
   });
+  const [responseMessage, setResponseMessage] = useState('');
 
   const handleChange = (e) => {
     setFormData({
@@ -16,9 +17,23 @@ const Contacto = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
+
+    try {
+      const response = await fetch('http://127.0.0.1:8000/contacto', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+      setResponseMessage(data.message);
+    } catch (error) {
+      setResponseMessage('Error al enviar el formulario.');
+    }
   };
 
   return (
@@ -43,6 +58,7 @@ const Contacto = () => {
         </label>
         <button type="submit">Enviar</button>
       </form>
+      {responseMessage && <p>{responseMessage}</p>}
     </div>
   );
 }
